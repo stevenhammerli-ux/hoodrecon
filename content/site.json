@@ -6,163 +6,7 @@
     "city": "Mansfield, TX",
     "tagline": "Restoring perfection, one dent at a time."
   },
-  "hero": {
-    "eyebrow": "Mobile paintless dent repair · DFW Metroplex",
-    "line1": "Dents out.",
-    "line2_highlight": "Paint",
-    "line2_rest": "untouched.",
-    "intro": "Door dings, creases and hail damage pushed out from behind the panel by a certified PDR technician. No filler, no repaint, and he comes to you.",
-    "photo": "img/hero-car.jpg",
-    "photo_credit": "Photo: Hannes Köttner / Unsplash",
-    "photo_credit_link": "https://unsplash.com/photos/a-black-car-on-a-road-t4Pl-u9ezLQ"
-  },
-  "highlights": [
-    {
-      "bold": "Certified",
-      "text": "PDR technician"
-    },
-    {
-      "bold": "12+ yrs",
-      "text": "hands-on"
-    },
-    {
-      "bold": "5.0",
-      "text": "on Google"
-    }
-  ],
   "services_heading": "If the paint's not cracked, it can probably come out.",
-  "services_intro": "Paintless dent repair works the metal back into shape with rods and glue tabs, so your factory paint and finish stay original.",
-  "services": [
-    {
-      "icon": "ding",
-      "title": "Door dings",
-      "text": "Parking lot dings and small round dents from shopping carts and car doors."
-    },
-    {
-      "icon": "crease",
-      "title": "Creases",
-      "text": "Long, sharp lines along body panels where something dragged or pressed in."
-    },
-    {
-      "icon": "hail",
-      "title": "Hail damage",
-      "text": "Roofs, hoods and trunks peppered by a Texas storm, often without touching paint."
-    },
-    {
-      "icon": "bump",
-      "title": "Minor bumps",
-      "text": "Light fender-bender dents, depending on where they are and how the metal stretched."
-    }
-  ],
-  "services_note": "Cracked paint, torn metal or damage underneath the panel usually needs a body shop. Send a photo and you'll get a straight answer either way.",
-  "steps_heading": "Three steps, zero trips to a shop.",
-  "steps": [
-    {
-      "title": "Text a photo",
-      "text": "Snap the dent in good light and text it to 682-308-6636. You'll get a price back, usually the same day."
-    },
-    {
-      "title": "He comes to you",
-      "text": "Pick a time. Cannon brings the tools and light board to your driveway or workplace anywhere in DFW."
-    },
-    {
-      "title": "Dent's gone",
-      "text": "Most single dents take an hour or two. The repair is permanent and the dent won't come back."
-    }
-  ],
-  "work_heading": "Straight off the panel.",
-  "work_intro": "A few jobs from around the Metroplex. Follow along on Instagram for before and after videos.",
-  "gallery": [
-    {
-      "photo": "img/ig-11-post-DdjzlGFJ5W4.jpg",
-      "caption": "Glue-pull repair in progress",
-      "description": "Glue tabs set on a dented door panel during a paintless repair"
-    },
-    {
-      "photo": "img/ig-05-reel-De9kq3JxLK9.jpg",
-      "caption": "Reading the dent under the light",
-      "description": "Light board reflection showing a dent on a car panel"
-    },
-    {
-      "photo": "img/ig-03-reel-DfIqbEOx5aM.jpg",
-      "caption": "SUV door and fender",
-      "description": "Silver SUV door and fender after dent repair"
-    },
-    {
-      "photo": "img/ig-04-reel-DfAVvJbRcHr.jpg",
-      "caption": "Rear hatch",
-      "description": "Rear hatch of a vehicle after repair"
-    },
-    {
-      "photo": "img/ig-10-post-DePkzW9J6Mf.jpg",
-      "caption": "On site with a customer",
-      "description": "Cannon Hood on site next to a customer's vehicle"
-    }
-  ],
-  "about": {
-    "heading": "Cannon Hood, owner and operator.",
-    "lead": "Hood Recon is one guy who does the work himself.",
-    "text": "Cannon is a certified PDR technician with more than 12 years of hands-on dent repair. He opened Hood Recon in 2023 to give DFW drivers a fair price and a repair they don't have to wonder about.",
-    "text2": "When you book, the person who quotes your dent is the person who fixes it.",
-    "photo": "img/logo-card.jpg",
-    "stats": [
-      {
-        "number": "12+",
-        "label": "Years of PDR"
-      },
-      {
-        "number": "2023",
-        "label": "Hood Recon est."
-      },
-      {
-        "number": "5.0",
-        "label": "Google rating"
-      }
-    ]
-  },
-  "area": {
-    "heading": "We come to you, all over DFW.",
-    "text": "Based in Mansfield and working across the Dallas–Fort Worth Metroplex. Home, office or the parking lot at work all work fine.",
-    "towns": [
-      "Mansfield",
-      "Arlington",
-      "Fort Worth",
-      "Grand Prairie",
-      "Burleson",
-      "Midlothian",
-      "Cedar Hill",
-      "Kennedale",
-      "Dallas",
-      "Irving",
-      "Southlake",
-      "Keller",
-      "Frisco",
-      "Plano",
-      "+ the rest of the Metroplex"
-    ]
-  },
-  "faq": [
-    {
-      "question": "What is PDR?",
-      "answer": "Paintless dent removal (or repair) takes out minor dents and dings without removing or touching the paint. It also handles creases and hail damage."
-    },
-    {
-      "question": "How is it done?",
-      "answer": "A trained technician gently and patiently massages the dent out from behind the panel using specialized tools. Done right, it looks like the dent was never there."
-    },
-    {
-      "question": "Does it work on fender benders?",
-      "answer": "Often, yes. It depends on where the damage is and the type of metal. If the damage is severe or there's damage under the body panel, a body shop is the better call, and you'll be told so."
-    },
-    {
-      "question": "Will my dent come back?",
-      "answer": "No. Once a quality technician finishes the repair, the dent stays out."
-    },
-    {
-      "question": "Do I need to bring my car anywhere?",
-      "answer": "Usually not. Most repairs happen wherever your vehicle is parked, anywhere in the DFW Metroplex. The exception is heavy hail damage: if the repair will take longer than about 8 hours, you may need to drop the vehicle off. You'll know which it is when you get your quote."
-    }
-  ],
   "contact_heading": "Got a dent? Send a photo.",
   "photo_tips": [
     "One photo straight on, one from a low angle along the panel",
@@ -198,6 +42,162 @@
     {
       "name": "LinkedIn",
       "link": "https://www.linkedin.com/company/hood-recon-llc/"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Text a photo",
+      "text": "Snap the dent in good light and text it to 682-308-6636. You'll get a price back, usually the same day."
+    },
+    {
+      "title": "He comes to you",
+      "text": "Pick a time. Cannon brings the tools and light board to your driveway or workplace anywhere in DFW."
+    },
+    {
+      "title": "Dent's gone",
+      "text": "Most single dents take an hour or two. The repair is permanent and the dent won't come back."
+    }
+  ],
+  "steps_heading": "Three steps, zero trips to a shop.",
+  "services_intro": "Paintless dent repair works the metal back into shape with rods and glue tabs, so your factory paint and finish stay original.",
+  "area": {
+    "heading": "We come to you, all over DFW.",
+    "text": "Based in Mansfield and working across the Dallas–Fort Worth Metroplex. Home, office or the parking lot at work all work fine.",
+    "towns": [
+      "Mansfield",
+      "Arlington",
+      "Fort Worth",
+      "Grand Prairie",
+      "Burleson",
+      "Midlothian",
+      "Cedar Hill",
+      "Kennedale",
+      "Dallas",
+      "Irving",
+      "Southlake",
+      "Keller",
+      "Frisco",
+      "Plano",
+      "+ the rest of the Metroplex"
+    ]
+  },
+  "about": {
+    "heading": "Cannon Hood, owner and operator.",
+    "lead": "Hood Recon is one guy who does the work himself.",
+    "text": "Cannon is a certified PDR technician with more than 12 years of hands-on dent repair. He opened Hood Recon in 2023 to give DFW drivers a fair price and a repair they don't have to wonder about.",
+    "text2": "When you book, the person who quotes your dent is the person who fixes it.",
+    "photo": "img/logo-card.jpg",
+    "stats": [
+      {
+        "number": "12+",
+        "label": "Years of PDR"
+      },
+      {
+        "number": "2023",
+        "label": "Hood Recon est."
+      },
+      {
+        "number": "5.0",
+        "label": "Google rating"
+      }
+    ]
+  },
+  "gallery": [
+    {
+      "photo": "img/ig-11-post-DdjzlGFJ5W4.jpg",
+      "caption": "Glue-pull repair in progress",
+      "description": "Glue tabs set on a dented door panel during a paintless repair"
+    },
+    {
+      "photo": "img/ig-05-reel-De9kq3JxLK9.jpg",
+      "caption": "Reading the dent under the light",
+      "description": "Light board reflection showing a dent on a car panel"
+    },
+    {
+      "photo": "img/ig-03-reel-DfIqbEOx5aM.jpg",
+      "caption": "SUV door and fender",
+      "description": "Silver SUV door and fender after dent repair"
+    },
+    {
+      "photo": "img/ig-04-reel-DfAVvJbRcHr.jpg",
+      "caption": "Rear hatch",
+      "description": "Rear hatch of a vehicle after repair"
+    },
+    {
+      "photo": "img/ig-10-post-DePkzW9J6Mf.jpg",
+      "caption": "On site with a customer",
+      "description": "Cannon Hood on site next to a customer's vehicle"
+    }
+  ],
+  "services_note": "Cracked paint, torn metal or damage underneath the panel usually needs a body shop. Send a photo and you'll get a straight answer either way.",
+  "work_heading": "Straight off the panel.",
+  "faq": [
+    {
+      "question": "What is PDR?",
+      "answer": "Paintless dent removal (or repair) takes out minor dents and dings without removing or touching the paint. It also handles creases and hail damage."
+    },
+    {
+      "question": "How is it done?",
+      "answer": "A trained technician gently and patiently massages the dent out from behind the panel using specialized tools. Done right, it looks like the dent was never there."
+    },
+    {
+      "question": "Does it work on fender benders?",
+      "answer": "Often, yes. It depends on where the damage is and the type of metal. If the damage is severe or there's damage under the body panel, a body shop is the better call, and you'll be told so."
+    },
+    {
+      "question": "Will my dent come back?",
+      "answer": "No. Once a quality technician finishes the repair, the dent stays out."
+    },
+    {
+      "question": "Do I need to bring my car anywhere?",
+      "answer": "Usually not. Most repairs happen wherever your vehicle is parked, anywhere in the DFW Metroplex. The exception is heavy hail damage: if the repair will take longer than about 8 hours, you may need to drop the vehicle off. You'll know which it is when you get your quote."
+    }
+  ],
+  "hero": {
+    "eyebrow": "Mobile paintless dent repair · DFW Metroplex",
+    "line1": "Dents out.",
+    "line2_highlight": "Paint",
+    "line2_rest": "untouched.",
+    "intro": "Door dings, creases and hail damage pushed out from behind the panel by a certified PDR technician. No filler, no repaint, and he comes to you.",
+    "photo": "img/hero-car.jpg",
+    "photo_credit": "",
+    "photo_credit_link": "https://unsplash.com/photos/a-black-car-on-a-road-t4Pl-u9ezLQ"
+  },
+  "services": [
+    {
+      "icon": "ding",
+      "title": "Door dings",
+      "text": "Parking lot dings and small round dents from shopping carts and car doors."
+    },
+    {
+      "icon": "crease",
+      "title": "Creases",
+      "text": "Long, sharp lines along body panels where something dragged or pressed in."
+    },
+    {
+      "icon": "hail",
+      "title": "Hail damage",
+      "text": "Roofs, hoods and trunks peppered by a Texas storm, often without touching paint."
+    },
+    {
+      "icon": "bump",
+      "title": "Minor bumps",
+      "text": "Light fender-bender dents, depending on where they are and how the metal stretched."
+    }
+  ],
+  "work_intro": "A few jobs from around the Metroplex. Follow along on Instagram for before and after videos.",
+  "highlights": [
+    {
+      "bold": "Certified",
+      "text": "PDR technician"
+    },
+    {
+      "bold": "12+ yrs",
+      "text": "hands-on"
+    },
+    {
+      "bold": "5.0",
+      "text": "on Google"
     }
   ]
 }
