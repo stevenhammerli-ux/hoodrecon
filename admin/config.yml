@@ -1,0 +1,132 @@
+# Hood Recon website editor (Decap CMS).
+# Cannon signs in at hoodreconllc.com/admin and edits everything below with simple forms.
+# Each "Publish" saves the change and the live site updates in about a minute.
+
+backend:
+  name: github
+  repo: stevenhammerli-ux/hoodrecon
+  branch: main
+  base_url: https://api.netlify.com   # Netlify handles the GitHub sign-in
+
+site_url: https://hoodreconllc.com
+display_url: https://hoodreconllc.com
+logo_url: /img/logo-square.jpg
+media_folder: img/uploads
+public_folder: /img/uploads
+
+collections:
+  - name: website
+    label: Website
+    editor: { preview: false }
+    files:
+      - name: site
+        label: Edit my website
+        file: content/site.json
+        fields:
+          - label: Contact info
+            name: business
+            widget: object
+            collapsed: false
+            fields:
+              - { label: Phone number, name: phone, widget: string }
+              - { label: Email, name: email, widget: string }
+              - { label: Hours, name: hours, widget: string, hint: "Example: Mon–Sat, 9 AM – 6 PM" }
+              - { label: City (shown in footer), name: city, widget: string }
+              - { label: Tagline, name: tagline, widget: string }
+
+          - label: Top of page
+            name: hero
+            widget: object
+            fields:
+              - { label: Small line above headline, name: eyebrow, widget: string }
+              - { label: "Headline, first line", name: line1, widget: string }
+              - { label: "Headline, second line (amber word)", name: line2_highlight, widget: string }
+              - { label: "Headline, second line (rest)", name: line2_rest, widget: string }
+              - { label: Intro sentence, name: intro, widget: text }
+              - { label: Background photo, name: photo, widget: image, hint: "A wide photo works best. Dark photos look best behind white text." }
+              - { label: Photo credit (leave blank for your own photos), name: photo_credit, widget: string, required: false }
+              - { label: Photo credit link, name: photo_credit_link, widget: string, required: false }
+
+          - label: Quick highlights under the buttons
+            name: highlights
+            widget: list
+            fields:
+              - { label: Bold part, name: bold, widget: string }
+              - { label: Rest, name: text, widget: string }
+
+          - { label: "What we fix: heading", name: services_heading, widget: string }
+          - { label: "What we fix: intro", name: services_intro, widget: text }
+          - label: "What we fix: services"
+            name: services
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Icon, name: icon, widget: select, options: [ding, crease, hail, bump, wrench, car], default: ding }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: text, widget: text }
+          - { label: "What we fix: note at bottom", name: services_note, widget: text }
+
+          - { label: "How it works: heading", name: steps_heading, widget: string }
+          - label: "How it works: steps"
+            name: steps
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: text, widget: text }
+
+          - { label: "Recent work: heading", name: work_heading, widget: string }
+          - { label: "Recent work: intro", name: work_intro, widget: text }
+          - label: "Recent work: photos"
+            name: gallery
+            widget: list
+            summary: "{{fields.caption}}"
+            hint: "Drag to reorder. The first photo shows up biggest."
+            fields:
+              - { label: Photo, name: photo, widget: image }
+              - { label: Caption, name: caption, widget: string, required: false }
+              - { label: "What's in the photo (for Google and screen readers)", name: description, widget: string, required: false }
+
+          - label: About Cannon
+            name: about
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Bold opening sentence, name: lead, widget: string }
+              - { label: Paragraph, name: text, widget: text }
+              - { label: Second paragraph, name: text2, widget: text, required: false }
+              - { label: Photo, name: photo, widget: image }
+              - label: Numbers
+                name: stats
+                widget: list
+                fields:
+                  - { label: Number, name: number, widget: string }
+                  - { label: Label, name: label, widget: string }
+
+          - label: Service area
+            name: area
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Towns (first one is highlighted), name: towns, widget: list, field: { label: Town, name: town, widget: string } }
+
+          - label: FAQ
+            name: faq
+            widget: list
+            summary: "{{fields.question}}"
+            fields:
+              - { label: Question, name: question, widget: string }
+              - { label: Answer, name: answer, widget: text }
+
+          - { label: "Contact: heading", name: contact_heading, widget: string }
+          - { label: "Contact: photo tips", name: photo_tips, widget: list, field: { label: Tip, name: tip, widget: string } }
+
+          - label: Social media links
+            name: socials
+            widget: list
+            summary: "{{fields.name}}"
+            hint: "Paste the full link. The right icon is picked automatically (Instagram, Facebook, Google, YouTube, X, LinkedIn, Pinterest, TikTok)."
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Link, name: link, widget: string }

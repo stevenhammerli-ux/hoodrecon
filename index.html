@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Hood Recon LLC</title>
+<meta name="description" content="Mobile paintless dent repair across the DFW Metroplex. Certified PDR technician Cannon Hood comes to you.">
+<link rel="icon" href="img/favicon-512.png">
+<style>.loading main{visibility:hidden}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap">
+<style>
+/* Layout: a dark shop floor. A PDR line-board hero, then hard-edged bands like a work bench, with steel panels and one amber "light board" accent. */
+:root {
+  --ink: #0b0c0d;        /* page ground, matches the logo's black */
+  --steel: #16181a;      /* raised panels */
+  --steel-2: #202326;    /* hover / borders */
+  --chalk: #eceae4;      /* main text, off-white like shop chalk */
+  --dust: #9a9c98;       /* secondary text */
+  --amber: #f2a73b;      /* the LED line board, used sparingly */
+  --line: #2b2f33;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "Barlow", "Segoe UI", system-ui, sans-serif;
+  --label: "Barlow Condensed", "Arial Narrow", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--ink); color: var(--chalk); font: 400 1.0625rem/1.6 var(--body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: #060709; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.label { font: 600 0.8125rem/1 var(--label); letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); }
+h1, h2, h3 { font-family: var(--display); text-transform: uppercase; line-height: 0.92; margin: 0; text-wrap: balance; letter-spacing: 0.01em; }
+h2 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 800; }
+h3 { font-size: 1.6rem; font-weight: 800; }
+p { margin: 0; }
+section { padding-block: clamp(4rem, 9vw, 7rem); border-top: 1px solid var(--line); }
+.sec-head { display: grid; gap: 0.9rem; margin-bottom: 2.75rem; max-width: 46rem; }
+.sec-head p { color: var(--dust); max-width: 60ch; }
+
+/* Header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: #060709; border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.6rem; }
+.brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.brand img { height: 92px; width: auto; margin-block: -10px; mix-blend-mode: lighten; }
+@media (max-width: 760px) { .brand img { height: 68px; margin-block: -6px; } }
+.brand span { font: 800 1.35rem/1 var(--display); text-transform: uppercase; letter-spacing: 0.04em; }
+.nav { display: flex; gap: 1.6rem; align-items: center; font: 600 0.95rem/1 var(--label); text-transform: uppercase; letter-spacing: 0.12em; }
+.nav a { text-decoration: none; color: var(--dust); }
+.nav a:hover { color: var(--chalk); }
+.btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.95rem 1.4rem; font: 700 1rem/1 var(--label); letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--chalk); background: var(--chalk); color: var(--ink); cursor: pointer; transition: background .15s, color .15s; }
+.btn:hover { background: transparent; color: var(--chalk); }
+.btn.ghost { background: transparent; color: var(--chalk); }
+.btn.ghost:hover { background: var(--chalk); color: var(--ink); }
+.nav .btn { padding: 0.7rem 1rem; color: var(--ink); }
+.nav .btn:hover { color: var(--chalk); }
+@media (max-width: 760px) { .nav a:not(.btn) { display: none; } .brand span { display: none; } }
+
+/* Hero: line board */
+.hero { position: relative; border-top: 0; padding-block: 0; overflow: hidden; }
+.board { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; object-position: 30% 60%; transform: scaleX(-1); }
+.credit { position: absolute; right: max(16px, env(safe-area-inset-right, 0px)); bottom: 10px; z-index: 2; font: 500 0.7rem/1 var(--label); letter-spacing: 0.08em; color: var(--dust); opacity: 0.7; text-decoration: none; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,12,13,0.96) 0%, rgba(11,12,13,0.82) 45%, rgba(11,12,13,0.25) 100%); pointer-events: none; }
+.hero .wrap { position: relative; z-index: 2; padding-block: clamp(4.5rem, 11vw, 8.5rem); display: grid; gap: 1.6rem; }
+.hero h1 { font-size: clamp(2.6rem, 7.5vw, 5.6rem); font-weight: 900; max-width: 14ch; }
+.hero h1 em { font-style: normal; color: var(--amber); }
+.hero .lede { font-size: clamp(1.1rem, 2vw, 1.3rem); max-width: 40ch; color: var(--chalk); }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.facts { display: flex; flex-wrap: wrap; gap: 0.5rem 1.8rem; font: 600 0.95rem/1.2 var(--label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--dust); padding-top: 0.6rem; }
+.facts b { color: var(--chalk); font-weight: 700; }
+.hint { font: 500 0.8rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--dust); }
+
+/* What we fix */
+.fix-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.fix { background: var(--ink); padding: 1.8rem 1.5rem 2rem; display: grid; gap: 0.8rem; align-content: start; }
+.fix svg { width: 44px; height: 44px; stroke: var(--amber); fill: none; stroke-width: 2; }
+.fix p { color: var(--dust); font-size: 0.98rem; }
+@media (max-width: 900px) { .fix-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 520px) { .fix-grid { grid-template-columns: 1fr; } }
+.note { margin-top: 1.5rem; color: var(--dust); font-size: 0.95rem; max-width: 70ch; }
+
+/* Process */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 2rem; counter-reset: step; }
+.step { display: grid; gap: 0.8rem; align-content: start; border-top: 3px solid var(--chalk); padding-top: 1.2rem; }
+.step .n { font: 900 3.4rem/0.8 var(--display); color: var(--amber); }
+.step p { color: var(--dust); }
+@media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
+
+/* Work gallery */
+.gallery { display: grid; grid-template-columns: 1.15fr 1fr 1fr; grid-template-rows: auto auto; gap: 10px; }
+.gallery figure { margin: 0; position: relative; overflow: hidden; background: var(--steel); }
+.gallery img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(0.35) contrast(1.08); transition: filter .3s, transform .5s; }
+.gallery figure:hover img { filter: none; transform: scale(1.03); }
+.gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 2.2rem 1rem 0.9rem; background: linear-gradient(transparent, rgba(11,12,13,0.92)); font: 600 0.85rem/1.2 var(--label); letter-spacing: 0.1em; text-transform: uppercase; }
+.g1 { grid-row: span 2; aspect-ratio: 4 / 5.6; }
+.gallery figure:not(.g1) { aspect-ratio: 4 / 5; }
+@media (max-width: 760px) { .gallery { grid-template-columns: 1fr 1fr; } .g1 { grid-column: span 2; grid-row: auto; aspect-ratio: 1 / 1; } }
+.more { margin-top: 1.6rem; display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; align-items: center; color: var(--dust); }
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.about-copy { display: grid; gap: 1.2rem; min-width: 0; }
+.about-copy p { color: var(--dust); max-width: 58ch; }
+.about-copy p strong { color: var(--chalk); font-weight: 600; }
+.card-img { background: #fff; padding: clamp(0.6rem, 2vw, 1.2rem); transform: rotate(-1.5deg); box-shadow: 0 30px 60px -20px rgba(0,0,0,0.8); max-width: 100%; }
+.card-img img { display: block; width: 100%; height: auto; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border: 1px solid var(--line); }
+.stats div { padding: 1.1rem 1rem; display: grid; gap: 0.35rem; border-right: 1px solid var(--line); }
+.stats div:last-child { border-right: 0; }
+.stats b { font: 800 2.2rem/1 var(--display); font-variant-numeric: tabular-nums; }
+.stats span { font: 600 0.78rem/1.2 var(--label); letter-spacing: 0.12em; text-transform: uppercase; color: var(--dust); }
+@media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
+
+/* Area */
+.area { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 3rem; align-items: start; }
+.towns { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.towns span { border: 1px solid var(--line); padding: 0.5rem 0.8rem; font: 600 0.92rem/1 var(--label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--dust); }
+.towns span.home { border-color: var(--amber); color: var(--chalk); }
+@media (max-width: 800px) { .area { grid-template-columns: 1fr; } }
+
+/* FAQ */
+.faq { display: grid; gap: 0; border-top: 1px solid var(--line); max-width: 52rem; }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding: 1.3rem 0; font: 700 1.5rem/1.1 var(--display); text-transform: uppercase; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font: 400 1.8rem/1 var(--body); color: var(--amber); transition: transform .2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { color: var(--dust); padding: 0 0 1.4rem; max-width: 62ch; }
+
+/* Contact */
+.contact { background: var(--steel); }
+.contact-grid { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 3rem; align-items: start; }
+.lines { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.line-item { background: var(--ink); padding: 1.2rem 1.3rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.line-item .k { font: 600 0.78rem/1 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--dust); display: block; margin-bottom: 0.45rem; }
+.line-item .v { font: 700 clamp(1.3rem, 3.4vw, 1.9rem)/1.1 var(--display); letter-spacing: 0.02em; user-select: all; overflow-wrap: anywhere; }
+.line-item > div { min-width: 0; }
+.copy { background: transparent; border: 1px solid var(--line); color: var(--chalk); font: 600 0.8rem/1 var(--label); letter-spacing: 0.12em; text-transform: uppercase; padding: 0.6rem 0.8rem; cursor: pointer; }
+.copy:hover { border-color: var(--chalk); }
+.socials { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.4rem; }
+.socials a { width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--chalk); background: var(--ink); transition: background .15s, color .15s, border-color .15s; }
+.socials a:hover { background: var(--chalk); color: var(--ink); border-color: var(--chalk); }
+.socials svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.socials svg .f { fill: currentColor; stroke: none; }
+footer .socials, .nav .socials { margin-top: 0; }
+.nav .socials { gap: 0.35rem; }
+.nav .socials a { width: 34px; height: 34px; background: transparent; border-color: transparent; }
+.nav .socials a:hover { border-color: var(--chalk); }
+.nav .socials svg { width: 17px; height: 17px; }
+.hero-socials { margin-top: 0.2rem; }
+.hero-socials a { width: 40px; height: 40px; background: rgba(6,7,9,0.6); }
+.hero-socials svg { width: 18px; height: 18px; }
+footer .socials a { width: 40px; height: 40px; background: transparent; }
+footer .socials svg { width: 18px; height: 18px; }
+.tip { display: grid; gap: 1rem; padding: 1.6rem; border: 1px dashed var(--amber); }
+.tip ul { margin: 0; padding-left: 1.1rem; color: var(--dust); display: grid; gap: 0.4rem; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+
+footer { background: #060709; border-top: 1px solid var(--line); padding-block: 2rem; color: var(--dust); font: 500 0.85rem/1.4 var(--label); letter-spacing: 0.08em; text-transform: uppercase; }
+footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: center; }
+footer img { height: 54px; width: auto; mix-blend-mode: lighten; }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo-square.jpg" alt="Hood Recon LLC logo"><span>Hood Recon</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#fix">What we fix</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn" href="#contact">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Intro">
+    <img class="board" data-src="hero.photo" src="" alt="" aria-hidden="true">
+    <a class="credit" data-href="hero.photo_credit_link" data-text="hero.photo_credit" target="_blank" rel="noopener"></a>
+    <div class="wrap">
+      <span class="label" data-text="hero.eyebrow"></span>
+      <h1><span data-text="hero.line1"></span><br><em data-text="hero.line2_highlight"></em> <span data-text="hero.line2_rest"></span></h1>
+      <p class="lede" data-text="hero.intro"></p>
+      <div class="ctas">
+        <a class="btn" href="#contact">Text a photo for a quote</a>
+        <a class="btn ghost" href="#work">See the work</a>
+      </div>
+      <div class="facts" id="highlights"></div>
+      <div class="socials hero-socials" id="hero-socials" aria-label="Social media"></div>
+    </div>
+  </section>
+
+  <section id="fix">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="label">What we fix</span>
+        <h2 data-text="services_heading"></h2>
+        <p data-text="services_intro"></p>
+      </div>
+      <div class="fix-grid" id="services"></div>
+      <p class="note" data-text="services_note"></p>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="label">How it works</span>
+        <h2 data-text="steps_heading"></h2>
+      </div>
+      <div class="steps" id="steps"></div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="label">Recent work</span>
+        <h2 data-text="work_heading"></h2>
+        <p data-text="work_intro"></p>
+      </div>
+      <div class="gallery" id="gallery"></div>
+      <div class="more">
+        <a class="btn ghost" id="insta-btn" href="https://www.instagram.com/hoodreconllc/" target="_blank" rel="noopener">More on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div class="about-copy">
+        <span class="label">The tech</span>
+        <h2 data-text="about.heading"></h2>
+        <p><strong data-text="about.lead"></strong> <span data-text="about.text"></span></p>
+        <p data-text="about.text2"></p>
+        <div class="stats" id="stats"></div>
+      </div>
+      <div class="card-img"><img data-src="about.photo" src="" alt="Cannon Hood, Hood Recon LLC"></div>
+    </div>
+  </section>
+
+  <section id="area">
+    <div class="wrap area">
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="label">Service area</span>
+        <h2 data-text="area.heading"></h2>
+        <p data-text="area.text"></p>
+      </div>
+      <div class="towns" id="towns" aria-label="Areas served"></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="label">FAQ</span>
+        <h2>Straight answers.</h2>
+      </div>
+      <div class="faq" id="faqs"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="sec-head">
+          <span class="label">Get a quote</span>
+          <h2 data-text="contact_heading"></h2>
+        </div>
+        <div class="lines">
+          <div class="line-item"><div><span class="k">Call or text</span><span class="v" id="phone" data-text="business.phone"></span></div><button class="copy" type="button" data-copy="phone">Copy</button></div>
+          <div class="line-item"><div><span class="k">Email</span><span class="v" id="email" data-text="business.email"></span></div><button class="copy" type="button" data-copy="email">Copy</button></div>
+          <div class="line-item"><div><span class="k">Hours</span><span class="v" data-text="business.hours"></span></div></div>
+        </div>
+      </div>
+      <div class="tip">
+        <span class="label">For the fastest quote</span>
+        <h3>Shoot it like this</h3>
+        <ul id="tips"></ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.jpg" alt="Hood Recon LLC">
+    <span data-text="business.tagline"></span>
+    <div class="socials" id="footer-socials" aria-label="Social media"></div>
+    <span>© <span id="year"></span> Hood Recon LLC · <span data-text="business.city"></span></span>
+  </div>
+</footer>
+
+<script>
+// All words and photos on this page come from content/site.json,
+// which the owner edits through the /admin page. No code changes needed.
+const ICONS = {
+  ding: '<circle cx="24" cy="24" r="7"/><circle cx="24" cy="24" r="15" stroke-dasharray="3 4"/>',
+  crease: '<path d="M6 30 C16 30 18 18 24 18 S32 30 42 30"/>',
+  hail: '<circle cx="12" cy="14" r="3"/><circle cx="30" cy="10" r="2.5"/><circle cx="22" cy="26" r="3.5"/><circle cx="38" cy="24" r="3"/><circle cx="12" cy="36" r="2.5"/><circle cx="32" cy="38" r="3"/>',
+  bump: '<path d="M8 34h32M12 34l4-12h16l4 12"/><path d="M28 16l6-6"/>',
+  wrench: '<path d="M30 8a9 9 0 0 0-8 12L8 34l6 6 14-14a9 9 0 0 0 12-8l-6 2-4-4z"/>',
+  car: '<path d="M8 30h32v6H8zM12 30l4-10h16l4 10"/><circle cx="15" cy="36" r="3"/><circle cx="33" cy="36" r="3"/>'
+};
+const SOCIAL = {
+  instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="f" cx="17.3" cy="6.7" r="1.2"/>',
+  facebook: '<path d="M14.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.8 1.4-3.8 3.9v2.3H9v3h2.6V21"/>',
+  google: '<path d="M20.5 12.2c0-.6-.1-1.2-.2-1.7H12v3.3h4.8a4.2 4.2 0 0 1-1.8 2.7"/><path d="M15 16.5A5.5 5.5 0 1 1 15.8 8"/>',
+  youtube: '<rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path class="f" d="M10 9.2v5.6l4.8-2.8z"/>',
+  x: '<path d="M4 4l16 16M20 4L4 20"/>',
+  linkedin: '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M12 17v-3.8c0-1.5 1-2.7 2.4-2.7s2.1 1 2.1 2.6V17M12 10.5V17"/><circle class="f" cx="8" cy="7.6" r="1.2"/>',
+  pinterest: '<circle cx="12" cy="12" r="9"/><path d="M10.5 20.5l1.8-7.5M10.8 14c.5.8 1.3 1.2 2.3 1.2 2.4 0 3.9-2 3.9-4.5C17 8.3 15 6.5 12.4 6.5 9.4 6.5 7.5 8.6 7.5 11c0 1 .4 2 1 2.4"/>',
+  tiktok: '<path d="M14 4v10.5a3.5 3.5 0 1 1-3.5-3.5M14 4c.5 2.5 2.2 4 5 4"/>',
+  link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>'
+};
+const socialKey = (s) => { const u = (s.link || '').toLowerCase(); return u.includes('instagram') ? 'instagram' : u.includes('facebook') ? 'facebook' : (u.includes('google') || u.includes('g.page')) ? 'google' : u.includes('youtube') ? 'youtube' : (u.includes('twitter') || u.includes('x.com')) ? 'x' : u.includes('linkedin') ? 'linkedin' : u.includes('pinterest') ? 'pinterest' : u.includes('tiktok') ? 'tiktok' : 'link'; };
+const socialHTML = s => `<a href="${esc(s.link)}" target="_blank" rel="noopener" aria-label="${esc(s.name)}" title="${esc(s.name)}"><svg viewBox="0 0 24 24" aria-hidden="true">${SOCIAL[socialKey(s)]}</svg></a>`;
+const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const get = (o, path) => path.split('.').reduce((a, k) => a?.[k], o);
+const list = (id, items, fn) => { const el = document.getElementById(id); if (el) el.innerHTML = (items || []).map(fn).join(''); };
+
+function render(c) {
+  document.querySelectorAll('[data-text]').forEach(el => el.textContent = get(c, el.dataset.text) ?? '');
+  document.querySelectorAll('[data-src]').forEach(el => { const v = get(c, el.dataset.src); if (v) el.src = v; });
+  document.querySelectorAll('[data-href]').forEach(el => { const v = get(c, el.dataset.href); if (v) el.href = v; else el.hidden = true; });
+  list('highlights', c.highlights, h => `<span><b>${esc(h.bold)}</b> ${esc(h.text)}</span>`);
+  list('services', c.services, s => `<div class="fix"><svg viewBox="0 0 48 48" aria-hidden="true">${ICONS[s.icon] || ICONS.ding}</svg><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div>`);
+  list('steps', c.steps, (s, i) => `<div class="step"><span class="n">${i + 1}</span><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div>`);
+  list('gallery', c.gallery, (g, i) => `<figure class="${i === 0 ? 'g1' : ''}"><img src="${esc(g.photo)}" alt="${esc(g.description || g.caption)}" loading="lazy">${g.caption ? `<figcaption>${esc(g.caption)}</figcaption>` : ''}</figure>`);
+  list('stats', c.about?.stats, s => `<div><b>${esc(s.number)}</b><span>${esc(s.label)}</span></div>`);
+  list('towns', c.area?.towns, (t, i) => `<span class="${i === 0 ? 'home' : ''}">${esc(t)}</span>`);
+  list('faqs', c.faq, (f, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(f.question)}</summary><p>${esc(f.answer)}</p></details>`);
+  list('tips', c.photo_tips, t => `<li>${esc(t)}</li>`);
+  list('footer-socials', c.socials, socialHTML);
+  list('hero-socials', c.socials, socialHTML);
+  const ig = (c.socials || []).find(s => /instagram/i.test(s.link)); const btn = document.getElementById('insta-btn');
+  if (ig) btn.href = ig.link; else btn.hidden = true;
+  document.getElementById('year').textContent = new Date().getFullYear();
+}
+
+document.documentElement.classList.add('loading');
+fetch('content/site.json', { cache: 'no-cache' })
+  .then(r => r.json())
+  .then(render)
+  .catch(e => console.error('Could not load content/site.json', e))
+  .finally(() => document.documentElement.classList.remove('loading'));
+
+// Copy buttons
+document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', () => {
+  const el = document.getElementById(b.dataset.copy);
+  const done = () => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1600); };
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  try { navigator.clipboard.writeText(el.textContent).then(done, fallback); } catch (e) { fallback(); }
+}));
+</script>
+
+</html>
