@@ -1,0 +1,24 @@
+{
+  "faq": [
+    {
+      "question": "What is PDR?",
+      "answer": "Paintless dent removal (or repair) takes out minor dents and dings without removing or touching the paint. It also handles creases and hail damage."
+    },
+    {
+      "question": "How is it done?",
+      "answer": "A trained technician gently and patiently massages the dent out from behind the panel using specialized tools. Done right, it looks like the dent was never there."
+    },
+    {
+      "question": "Does it work on fender benders?",
+      "answer": "Often, yes. It depends on where the damage is and the type of metal. If the damage is severe or there's damage under the body panel, a body shop is the better call, and you'll be told so."
+    },
+    {
+      "question": "Will my dent come back?",
+      "answer": "No. Once a quality technician finishes the repair, the dent stays out."
+    },
+    {
+      "question": "Do I need to bring my car anywhere?",
+      "answer": "Usually not. Most repairs happen wherever your vehicle is parked, anywhere in the DFW Metroplex. The exception is heavy hail damage: if the repair will take longer than about 8 hours, you may need to drop the vehicle off. You'll know which it is when you get your quote."
+    }
+  ]
+}

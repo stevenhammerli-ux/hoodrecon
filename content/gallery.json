@@ -1,0 +1,31 @@
+{
+  "work_heading": "Straight off the panel.",
+  "work_intro": "A few jobs from around the Metroplex. Follow along on Instagram for before and after videos.",
+  "gallery": [
+    {
+      "photo": "img/ig-11-post-DdjzlGFJ5W4.jpg",
+      "caption": "Glue-pull repair in progress",
+      "description": "Glue tabs set on a dented door panel during a paintless repair"
+    },
+    {
+      "photo": "img/ig-05-reel-De9kq3JxLK9.jpg",
+      "caption": "Reading the dent under the light",
+      "description": "Light board reflection showing a dent on a car panel"
+    },
+    {
+      "photo": "img/ig-03-reel-DfIqbEOx5aM.jpg",
+      "caption": "SUV door and fender",
+      "description": "Silver SUV door and fender after dent repair"
+    },
+    {
+      "photo": "img/ig-04-reel-DfAVvJbRcHr.jpg",
+      "caption": "Rear hatch",
+      "description": "Rear hatch of a vehicle after repair"
+    },
+    {
+      "photo": "img/ig-10-post-DePkzW9J6Mf.jpg",
+      "caption": "On site with a customer",
+      "description": "Cannon Hood on site next to a customer's vehicle"
+    }
+  ]
+}

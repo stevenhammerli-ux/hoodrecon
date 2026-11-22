@@ -1,12 +1,88 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <title>Hood Recon – Edit website</title>
+  <title>Hood Recon · Website editor</title>
+  <link rel="icon" href="/img/favicon-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+  <style>
+    /* Hood Recon look for the Decap editor. Decap's own class names end in a readable component name, which these selectors match. */
+    :root { --hr-black: #060709; --hr-chalk: #eceae4; --hr-amber: #f2a73b; --hr-amber-dark: #c9832a; --hr-steel: #16181a; }
+    body, button, input, textarea, select { font-family: "Barlow", "Segoe UI", system-ui, sans-serif !important; }
+    body { background: #f1f0ec !important; }
+
+    /* Login screen */
+    [class*="StyledAuthenticationPage"] { background: var(--hr-black) !important; color: var(--hr-chalk); gap: 1.5rem; }
+    [class*="StyledAuthenticationPage"] [class*="PageLogoIcon"] { width: 240px !important; height: 240px !important; color: transparent !important; background: url(/img/logo-square.jpg) center / contain no-repeat; }
+    [class*="StyledAuthenticationPage"] [class*="PageLogoIcon"] svg, [class*="StyledAuthenticationPage"] [class*="PageLogoIcon"] img { opacity: 0; }
+    [class*="StyledAuthenticationPage"]::before { content: "Website editor"; order: -1; font: 800 2.4rem/1 "Big Shoulders Display", Impact, sans-serif; text-transform: uppercase; letter-spacing: .04em; color: var(--hr-chalk); }
+    [class*="LoginButton"] { background: var(--hr-amber) !important; color: var(--hr-black) !important; font: 700 1rem/1 "Barlow Condensed", sans-serif !important; letter-spacing: .12em; text-transform: uppercase; padding: 14px 28px !important; height: auto !important; border-radius: 0 !important; }
+    [class*="LoginButton"]:hover { background: var(--hr-chalk) !important; }
+    [class*="GoBackButton"] { color: #9a9c98 !important; }
+
+    /* Top bar */
+    [class$="-AppHeader"] { background: var(--hr-black) !important; box-shadow: none !important; }
+    [class*="AppHeaderContent"]::before { content: ""; width: 44px; height: 44px; margin-right: 18px; flex: none; background: url(/img/logo-square.jpg) center / contain no-repeat; align-self: center; }
+    [class*="AppHeaderButton"], [class*="AppHeaderNavLink"], [class*="AppHeaderSiteLink"], [class*="AppHeaderTestRepoIndicator"] { color: #b9b8b2 !important; font-family: "Barlow Condensed", sans-serif !important; font-weight: 600 !important; letter-spacing: .1em; text-transform: uppercase; }
+    [class*="AppHeaderButton"]:hover, [class*="AppHeaderNavLink"]:hover, [class*="AppHeaderSiteLink"]:hover { color: var(--hr-chalk) !important; }
+    [class*="buttonActive"] { color: var(--hr-amber) !important; }
+    [class*="AppHeaderButton"] [class*="IconWrapper"], [class*="AppHeaderNavLink"] [class*="IconWrapper"] { color: inherit !important; }
+
+    /* Lists and cards */
+    [class*="SidebarHeading"], [class*="CollectionTopHeading"] { font: 800 1.7rem/1 "Big Shoulders Display", Impact, sans-serif !important; text-transform: uppercase; letter-spacing: .03em; color: var(--hr-black) !important; }
+    [class*="sidebarNavLinkActive"] { color: var(--hr-black) !important; background: #f6e7cf !important; border-left-color: var(--hr-amber) !important; }
+    [class*="SidebarNavLink"]:not([class*="sidebarNavLinkActive"]) { background: transparent !important; color: #3a3d40 !important; border-left-color: transparent !important; }
+    [class*="SidebarNavLink"]:not([class*="sidebarNavLinkActive"]):hover { background: #fbf6ec !important; }
+    [class*="ListCard"]:hover, [class*="ListCardLink"]:hover { background: #fbf6ec !important; }
+    [class*="ListCardTitle"] { font-weight: 600; font-size: 1.05rem; }
+    [class*="card"] { border-radius: 4px !important; }
+
+    /* Editor toolbar: make "Publish" the obvious amber button */
+    [class*="ToolbarContainer"] { border-bottom: 3px solid var(--hr-amber) !important; }
+    [class*="PublishButton"], [class*="PublishedToolbarButton"], [class*="ToolbarButton"][class*="green"] { background: var(--hr-amber) !important; color: var(--hr-black) !important; font-weight: 700 !important; }
+    [class*="FieldLabel"] { font-family: "Barlow Condensed", sans-serif !important; letter-spacing: .08em; }
+    input:focus, textarea:focus { outline: 2px solid var(--hr-amber) !important; outline-offset: -1px; }
+  </style>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
+  <script>
+    // Live preview: show the real home page next to the form, updated as you type.
+    const SCROLL_TO = { contact: 'contact', socials: 'contact', hero: 'top', services: 'fix', steps: 'how', gallery: 'work', about: 'about', area: 'area', faq: 'faq', tips: 'contact' };
+
+    function withPreviewImages(data, getAsset) {
+      const fix = v => { if (!v) return v; try { return getAsset(v).toString(); } catch (e) { return v; } };
+      if (data.hero?.photo) data.hero.photo = fix(data.hero.photo);
+      if (data.about?.photo) data.about.photo = fix(data.about.photo);
+      (data.gallery || []).forEach(g => g && (g.photo = fix(g.photo)));
+      return data;
+    }
+
+    const SitePreview = createClass({
+      send() {
+        const frame = this.frame; if (!frame || !frame.contentWindow) return;
+        const name = this.props.entry.get('slug');
+        const data = withPreviewImages(this.props.entry.get('data').toJS(), this.props.getAsset);
+        frame.contentWindow.postMessage({ type: 'hoodrecon-preview', data, scrollTo: this.scrolled ? null : SCROLL_TO[name] }, location.origin);
+        this.scrolled = true;
+      },
+      componentDidUpdate() { this.send(); },
+      render() {
+        return h('iframe', {
+          src: '/?preview=1',
+          title: 'Live preview',
+          ref: el => { this.frame = el; },
+          onLoad: () => { this.scrolled = false; setTimeout(() => this.send(), 400); },
+          style: { width: '100%', height: '100vh', border: 0, display: 'block' }
+        });
+      }
+    });
+
+    Object.keys(SCROLL_TO).forEach(name => CMS.registerPreviewTemplate(name, SitePreview));
+  </script>
 </body>
 </html>

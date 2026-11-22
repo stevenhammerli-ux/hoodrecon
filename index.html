@@ -7,7 +7,7 @@
 <title>Hood Recon LLC</title>
 <meta name="description" content="Mobile paintless dent repair across the DFW Metroplex. Certified PDR technician Cannon Hood comes to you.">
 <link rel="icon" href="img/favicon-512.png">
-<style>.loading main{visibility:hidden}</style>
+<style>.loading main{visibility:hidden}.is-preview .top{position:static}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap">
@@ -328,7 +328,7 @@ const list = (id, items, fn) => { const el = document.getElementById(id); if (el
 function render(c) {
   document.querySelectorAll('[data-text]').forEach(el => el.textContent = get(c, el.dataset.text) ?? '');
   document.querySelectorAll('[data-src]').forEach(el => { const v = get(c, el.dataset.src); if (v) el.src = v; });
-  document.querySelectorAll('[data-href]').forEach(el => { const v = get(c, el.dataset.href); if (v) el.href = v; else el.hidden = true; });
+  document.querySelectorAll('[data-href]').forEach(el => { const v = get(c, el.dataset.href); if (v) el.href = v; el.hidden = !v || !el.textContent.trim(); });
   list('highlights', c.highlights, h => `<span><b>${esc(h.bold)}</b> ${esc(h.text)}</span>`);
   list('services', c.services, s => `<div class="fix"><svg viewBox="0 0 48 48" aria-hidden="true">${ICONS[s.icon] || ICONS.ding}</svg><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div>`);
   list('steps', c.steps, (s, i) => `<div class="step"><span class="n">${i + 1}</span><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div>`);
@@ -344,12 +344,24 @@ function render(c) {
   document.getElementById('year').textContent = new Date().getFullYear();
 }
 
+const SECTIONS = ['contact', 'socials', 'hero', 'services', 'steps', 'gallery', 'about', 'area', 'faq', 'tips'];
+let content = {};
+
 document.documentElement.classList.add('loading');
-fetch('content/site.json', { cache: 'no-cache' })
-  .then(r => r.json())
-  .then(render)
-  .catch(e => console.error('Could not load content/site.json', e))
+Promise.all(SECTIONS.map(n => fetch('content/' + n + '.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : {}).catch(() => ({}))))
+  .then(parts => { content = Object.assign({}, ...parts); render(content); })
+  .catch(e => console.error('Could not load content', e))
   .finally(() => document.documentElement.classList.remove('loading'));
+
+// Live preview inside the /admin editor: the editor sends the section being edited.
+if (new URLSearchParams(location.search).has('preview')) {
+  addEventListener('message', e => {
+    if (e.origin !== location.origin || e.data?.type !== 'hoodrecon-preview') return;
+    render(Object.assign({}, content, e.data.data));
+    if (e.data.scrollTo) document.getElementById(e.data.scrollTo)?.scrollIntoView({ block: 'start' });
+  });
+  document.documentElement.classList.add('is-preview');
+}
 
 // Copy buttons
 document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', () => {

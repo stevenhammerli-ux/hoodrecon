@@ -1,0 +1,23 @@
+{
+  "about": {
+    "heading": "Cannon Hood, owner and operator.",
+    "lead": "Hood Recon is one guy who does the work himself.",
+    "text": "Cannon is a certified PDR technician with more than 12 years of hands-on dent repair. He opened Hood Recon in 2023 to give DFW drivers a fair price and a repair they don't have to wonder about.",
+    "text2": "When you book, the person who quotes your dent is the person who fixes it.",
+    "photo": "img/logo-card.jpg",
+    "stats": [
+      {
+        "number": "12+",
+        "label": "Years of PDR"
+      },
+      {
+        "number": "2023",
+        "label": "Hood Recon est."
+      },
+      {
+        "number": "5.0",
+        "label": "Google rating"
+      }
+    ]
+  }
+}

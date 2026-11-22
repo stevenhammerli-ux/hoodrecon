@@ -1,0 +1,27 @@
+{
+  "services_heading": "If the paint's not cracked, it can probably come out.",
+  "services_intro": "Paintless dent repair works the metal back into shape with rods and glue tabs, so your factory paint and finish stay original.",
+  "services": [
+    {
+      "icon": "ding",
+      "title": "Door dings",
+      "text": "Parking lot dings and small round dents from shopping carts and car doors."
+    },
+    {
+      "icon": "crease",
+      "title": "Creases",
+      "text": "Long, sharp lines along body panels where something dragged or pressed in."
+    },
+    {
+      "icon": "hail",
+      "title": "Hail damage",
+      "text": "Roofs, hoods and trunks peppered by a Texas storm, often without touching paint."
+    },
+    {
+      "icon": "bump",
+      "title": "Minor bumps",
+      "text": "Light fender-bender dents, depending on where they are and how the metal stretched."
+    }
+  ],
+  "services_note": "Cracked paint, torn metal or damage underneath the panel usually needs a body shop. Send a photo and you'll get a straight answer either way."
+}

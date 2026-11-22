@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "eyebrow": "Mobile paintless dent repair · DFW Metroplex",
+    "line1": "Dents out.",
+    "line2_highlight": "Paint",
+    "line2_rest": "untouched.",
+    "intro": "Door dings, creases and hail damage pushed out from behind the panel by a certified PDR technician. No filler, no repaint, and he comes to you.",
+    "photo": "img/hero-car.jpg",
+    "photo_credit": "",
+    "photo_credit_link": "https://unsplash.com/photos/a-black-car-on-a-road-t4Pl-u9ezLQ"
+  },
+  "highlights": [
+    {
+      "bold": "Certified",
+      "text": "PDR technician"
+    },
+    {
+      "bold": "12+ yrs",
+      "text": "hands-on"
+    },
+    {
+      "bold": "5.0",
+      "text": "on Google"
+    }
+  ]
+}
